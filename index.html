@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andra Wijaya — Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo">
+      <span class="logo-mark" id="navInitials">AW</span>
+      <span id="navName">M Nur Erik Setiawan</span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#tentang">Tentang Diriku</a>
+      <a href="#dashboard">Skill</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#kontak">Hubungi Saya</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <p class="eyebrow" id="heroEyebrow">Halo, Kenalin Aku M Nur Erik Setiawan seorang siswa yang bersekolah di SMA NEGERI 1 KANDANGAN</p>
+      <h1 id="heroName">M <span class="grad-text">Nur Erik Setiawan</span></h1>
+      <p class="hero-tagline" id="heroTagline"></p>
+      <div class="hero-actions">
+        <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+        <a id="cvBtn" href="#" class="btn btn-ghost">Unduh CV</a>
+      </div>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+    <div class="hero-visual">
+      <div class="blob"></div>
+      <div class="code-card">
+        <div class="code-topbar">
+          <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+          <span class="code-title">profile.js</span>
+        </div>
+        <div class="code-body" id="codeBody"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="tentang">
+  <div class="wrap about-inner">
+    <div class="reveal">
+      <div class="avatar-block" id="avatarBlock">AW</div>
+    </div>
+    <div class="about-text reveal">
+      <p class="eyebrow">Tentang saya</p>
+      <h2 style="margin-bottom:18px;font-size:clamp(24px,3.4vw,32px);">Sedikit cerita soal cara saya bekerja</h2>
+      <p id="aboutText"></p>
+      <div class="fact-grid" id="factGrid"></div>
+    </div>
+  </div>
+</section>
+
+<section class="dashboard" id="dashboard">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Dashboard Skill</p>
+      <h2>Peta kemampuan, disusun seperti panel kerja</h2>
+      <p>Semua skill dikelompokkan per kategori lengkap dengan level penguasaan. Gunakan filter untuk fokus ke satu kategori.</p>
+    </div>
+
+    <div class="dash-panel reveal">
+      <div class="dash-topbar">
+        <div class="dash-topbar-left">
+          <span class="status-dot"></span>
+          <span>skills.dashboard — status: online</span>
+        </div>
+        <div class="dash-filters" id="dashFilters"></div>
+      </div>
+
+      <div class="dash-summary" id="dashSummary"></div>
+
+      <div class="dash-grid" id="dashGrid"></div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="proyek">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Proyek Pilihan</p>
+      <h2>Beberapa hal yang sudah saya bangun</h2>
+      <p>Sebagian proyek yang mewakili cara saya menyelesaikan masalah — dari sisi sistem sampai pengalaman pengguna.</p>
+    </div>
+    <div class="proj-grid" id="projGrid"></div>
+  </div>
+</section>
+
+<section class="contact" id="kontak">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <div>
+        <span class="avail-badge"><span class="status-dot" style="background:#4ade80;"></span><span id="availText"></span></span>
+        <h2>Punya proyek yang ingin dikerjakan bareng?</h2>
+        <p>Ceritakan kebutuhan Anda — saya akan balas dalam 1x24 jam.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="btn btn-primary" id="emailBtn" href="#">Kirim Email</a>
+        <div class="contact-social" id="socialLinks"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p id="footerText">© 2026 Andra Wijaya. Dibuat dengan kode dan kopi.</p>
+    <p>Tema: putih · gradasi indigo–cyan</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
