@@ -42,7 +42,7 @@
     font-family:var(--font-body);
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
-     overflow-x:hidden;
+    overflow-x:hidden;
   }
   html{overflow-x:hidden;}
   img{max-width:100%;display:block;}
@@ -222,7 +222,7 @@
   .about{padding:80px 0;background:var(--bg-soft);}
   .about-inner{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start;}
   .avatar-block{
-    aspect-ratio:1/1;border-radius:50px;
+    aspect-ratio:1/1;border-radius:20px;
     background:var(--grad-main);
     display:flex;align-items:center;justify-content:center;
     color:#fff;font-family:var(--font-display);font-size:64px;font-weight:700;
