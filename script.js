@@ -26,7 +26,7 @@ const PORTFOLIO_DATA = {
       "const developer = {",
       "  name: 'M.Nur Erik Setiawan',",
       "  role: 'Portfoilo',",
-      "  stack: ['React', 'Node.js', 'PostgreSQL'],",
+      "  stack: ['Animation', 'Editing', 'Coding'],",
       "  passion: 'Animation & Motion Graphic',",
       "};"
     ]
@@ -48,47 +48,44 @@ const PORTFOLIO_DATA = {
   skillDashboard: {
     categories: [
       {
-        id: "frontend",
-        name: "Frontend",
+        id: "animasi",
+        name: "Animasi",
         icon: "◧",
         skills: [
-          { name: "React / Next.js", level: 92 },
-          { name: "TypeScript",      level: 88 },
-          { name: "Tailwind CSS",    level: 90 },
-          { name: "Vue.js",          level: 70 }
+          { name: "Prisma 3D Legacy", level: 78 },
+          { name: "Alight Motion",    level: 59 },
         ]
       },
       {
-        id: "backend",
-        name: "Backend",
+        id: "editing",
+        name: "Editing",
         icon: "◨",
         skills: [
-          { name: "Node.js / Express",   level: 90 },
-          { name: "PostgreSQL",          level: 82 },
-          { name: "REST & GraphQL API",  level: 85 },
-          { name: "Redis",               level: 68 }
+          { name: "Kinemaster",         level: 80 },
+          { name: "Alight Motion",      level: 59 },
+          { name: "Capcut PC Version",  level: 40 },
         ]
       },
       {
-        id: "devops",
-        name: "Database & DevOps",
+        id: "coding,
+        name: "Coding",
         icon: "◩",
         skills: [
-          { name: "Docker",                  level: 78 },
-          { name: "CI/CD (GitHub Actions)",  level: 75 },
-          { name: "AWS",                     level: 70 },
-          { name: "Nginx",                   level: 65 }
+          { name: "HTML",       level: 45 },
+          { name: "CSS",        level: 45 },
+          { name: "Python",     level: 20 },
+          { name: "JavaScript", level: 12 }
         ]
       },
       {
-        id: "tools",
-        name: "Tools & Lainnya",
+        id: "poster",
+        name: "Poster",
         icon: "◪",
         skills: [
-          { name: "Git & GitHub",     level: 95 },
-          { name: "Figma",            level: 72 },
-          { name: "Testing (Jest)",   level: 80 },
-          { name: "Linux",            level: 83 }
+          { name: "Pixelab",      level: 95 },
+          { name: "ALight Motion",level: 72 },
+          { name: "Ibis Paint",   level: 80 },
+          { name: "Canva",        level: 83 }
         ]
       }
     ]
