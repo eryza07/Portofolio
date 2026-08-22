@@ -35,7 +35,7 @@ const PORTFOLIO_DATA = {
       "const developer = {",
       "  name: 'M.Nur Erik Setiawan',",
       "  role: 'Portfoilo',",
-      "  stack: ['Animaton', 'Editing', 'Coding', 'IoT'],",
+      "  stack: ['Animation', 'Codinng', 'Design'],",
       "  passion: 'Animation & Motion Graphic',",
       "};"
     ]
@@ -109,7 +109,7 @@ const PORTFOLIO_DATA = {
     {
       title: "Scene 2 Rewind Minecraft X Gacha",
       desc: "Animasi yang dibuat dengan device seadanya.",
-      tags: ["React", "Node.js", "PostgreSQL"],
+      tags: ["Prisma 3D", "Kinemaster"],
       thumbLabel: "inventory.app",
       image: "",
       url: "https://youtu.be/DlXg4sLkhqc?si=cDXL6MlGL0b0lkdg"
@@ -117,7 +117,7 @@ const PORTFOLIO_DATA = {
     {
       title: "Editing Video Exe",
       desc: "Mencoba dalam mengedit hal baru yaitu video exe dan merupakan video exe pertama saya.",
-      tags: ["Next.js", "Prisma", "Redis"],
+      tags: ["Kinemaster", "Alight Motion"],
       thumbLabel: "clinic.book",
       image: "",
       url: "https://youtu.be/WC8NwJ7q0xk?si=Cdq0T113vgD9-Rx7"
@@ -150,7 +150,7 @@ const PORTFOLIO_DATA = {
   music: {
     playlist: [
       // Contoh — hapus tanda // di baris bawah & sesuaikan setelah file musik ditaruh:
-      { title: "Foto Kita Blur", artist: "Sal Priadi", src: "foto-kita-blur.mp3" },
+      // { title: "Judul Lagu 1", artist: "Nama Artis", src: "musik/lagu1.mp3" },
       // { title: "Judul Lagu 2", artist: "Nama Artis", src: "musik/lagu2.mp3" },
     ]
   },
@@ -209,13 +209,13 @@ document.getElementById('factGrid').innerHTML = P.about.facts.map(f => `
 
 // ---------- Skill Dashboard ----------
 const cats = P.skillDashboard.categories;
-const totalSkills = cats.reduce((n, c) => n + c.skills.length, 0);
+const totalApps = cats.reduce((n, c) => n + c.skills.length, 0);
 const allLevels = cats.flatMap(c => c.skills.map(s => s.level));
 const avgLevel = Math.round(allLevels.reduce((a, b) => a + b, 0) / allLevels.length);
 
 document.getElementById('dashSummary').innerHTML = `
-  <div class="sitem"><b>${totalSkills}</b><span>TOTAL SKILL</span></div>
-  <div class="sitem"><b>${cats.length}</b><span>KATEGORI</span></div>
+  <div class="sitem"><b>${cats.length}</b><span>TOTAL SKILL</span></div>
+  <div class="sitem"><b>${totalApps}</b><span>APLIKASI DIPAKAI</span></div>
   <div class="sitem"><b>${avgLevel}%</b><span>RATA-RATA LEVEL</span></div>
   <div class="sitem"><b>5th</b><span>TAHUN BELAJAR</span></div>
 `;
@@ -229,7 +229,7 @@ document.getElementById('dashGrid').innerHTML = cats.map(c => `
     <div class="cat-head">
       <div class="cat-icon">${c.icon}</div>
       <h3>${c.name}</h3>
-      <span class="cat-count">${c.skills.length} skill</span>
+      <span class="cat-count">${c.skills.length} aplikasi</span>
     </div>
     ${c.skills.map(s => `
       <div class="skill-row">
