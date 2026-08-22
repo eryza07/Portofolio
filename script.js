@@ -141,6 +141,20 @@ const PORTFOLIO_DATA = {
     ]
   },
 
+  // ---- Musik ----
+  // Widget pemutar musik di pojok kiri bawah akan OTOMATIS TERSEMBUNYI
+  // kalau playlist di bawah ini dikosongkan ( [] ).
+  // Tambahkan lagu dengan format sama seperti foto: taruh file musik (.mp3)
+  // 1 folder dengan index.html, lalu isi nama filenya di "src".
+  // Bisa juga isi "src" dengan link musik dari internet.
+  music: {
+    playlist: [
+      // Contoh — hapus tanda // di baris bawah & sesuaikan setelah file musik ditaruh:
+      // { title: "Judul Lagu 1", artist: "Nama Artis", src: "musik/lagu1.mp3" },
+      // { title: "Judul Lagu 2", artist: "Nama Artis", src: "musik/lagu2.mp3" },
+    ]
+  },
+
   footerNote: "© 2026 Andra Wijaya. Dibuat dengan kode dan kopi."
 };
 /* =========================================================================
@@ -297,3 +311,90 @@ const barObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 document.querySelectorAll('.bar-fill').forEach(el => barObserver.observe(el));
+
+// ---------- Widget Musik ----------
+const playlist = P.music.playlist;
+const musicPlayerEl = document.getElementById('musicPlayer');
+
+if (!playlist || playlist.length === 0) {
+  // Tidak ada lagu diisi -> widget disembunyikan otomatis
+  musicPlayerEl.classList.add('no-track');
+} else {
+  const audioEl = document.getElementById('audioPlayer');
+  const musicIcon = document.getElementById('musicIcon');
+  const musicTitle = document.getElementById('musicTitle');
+  const musicSub = document.getElementById('musicSub');
+  const musicMenu = document.getElementById('musicMenu');
+  const musicMenuBtn = document.getElementById('musicMenuBtn');
+
+  let currentIndex = 0;
+
+  function loadTrack(index, autoplay) {
+    currentIndex = index;
+    const track = playlist[index];
+    audioEl.src = track.src;
+    musicTitle.textContent = track.title || 'Tanpa judul';
+    musicSub.textContent = track.artist || 'Klik untuk buka menu musik';
+    document.querySelectorAll('.music-menu-item').forEach((el, i) => {
+      el.classList.toggle('active', i === index);
+    });
+    if (autoplay) {
+      audioEl.play().catch(() => {});
+    }
+  }
+
+  function renderMenu() {
+    musicMenu.innerHTML = playlist.map((t, i) => `
+      <div class="music-menu-item ${i === currentIndex ? 'active' : ''}" data-index="${i}">
+        <span class="mi-title">${t.title || 'Tanpa judul'}</span>
+        <span class="mi-artist">${t.artist || ''}</span>
+      </div>
+    `).join('');
+  }
+
+  renderMenu();
+  loadTrack(0, false);
+
+  // tombol play / pause
+  document.getElementById('musicToggle').addEventListener('click', () => {
+    if (audioEl.paused) {
+      audioEl.play().catch(() => {});
+    } else {
+      audioEl.pause();
+    }
+  });
+  audioEl.addEventListener('play', () => { musicIcon.textContent = '❚❚'; });
+  audioEl.addEventListener('pause', () => { musicIcon.textContent = '▶'; });
+
+  // lagu otomatis lanjut ke berikutnya kalau selesai
+  audioEl.addEventListener('ended', () => {
+    const next = (currentIndex + 1) % playlist.length;
+    loadTrack(next, true);
+  });
+
+  // buka/tutup menu daftar lagu
+  function toggleMenu() {
+    musicMenu.classList.toggle('open');
+    musicMenuBtn.classList.toggle('open');
+  }
+  musicMenuBtn.addEventListener('click', toggleMenu);
+  document.getElementById('musicInfoBtn').addEventListener('click', toggleMenu);
+
+  // pilih lagu dari menu
+  musicMenu.addEventListener('click', (e) => {
+    const item = e.target.closest('.music-menu-item');
+    if (!item) return;
+    loadTrack(parseInt(item.dataset.index, 10), true);
+    renderMenu();
+    musicMenu.classList.remove('open');
+    musicMenuBtn.classList.remove('open');
+  });
+
+  // klik di luar widget -> tutup menu
+  document.addEventListener('click', (e) => {
+    if (!musicPlayerEl.contains(e.target)) {
+      musicMenu.classList.remove('open');
+      musicMenuBtn.classList.remove('open');
+    }
+  });
+}
