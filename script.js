@@ -7,38 +7,38 @@ const PORTFOLIO_DATA = {
 
   // ---- Identitas & Hero ----
   profile: {
-    initials: "AW",                 // inisial untuk logo & avatar
-    firstName: "Andra",
-    lastName: "Wijaya",
-    role: "Full-Stack Developer",
-    eyebrow: "Halo, saya seorang",
-    tagline: "Membangun produk digital yang cepat, rapi, dan enak dipakai — dari desain database sampai piksel terakhir di layar.",
+    initials: "ER",                 // inisial untuk logo & avatar
+    firstName: "M",
+    lastName: "Nur Erik Setiawan",
+    role: "Portfolio",
+    eyebrow: "Halo,rek kenalin aku M.Nur Erik Setiawan saat ini aku  sedang bersekolah di SMA NEGERI 1 KANDANGAN",
+    tagline: "Setiap project kami kerjakan dengan sepenuh hati  walau kadang stress dikit.",
     cvUrl: "#",                     // ganti dengan link CV (PDF)
-    email: "halo@andrawijaya.dev",
+    email: "eryza@buisnes.com",
     availability: "Terbuka untuk proyek freelance",
     stats: [
-      { value: "5+",  label: "Tahun pengalaman" },
-      { value: "40+", label: "Proyek selesai" },
-      { value: "18",  label: "Klien puas" }
+      { value: "1+",  label: "Sedang Tahap Mencari Pengalaman" },
+      { value: "3+", label: "Proyek selesai" },
+      { value: "3",  label: "Klien puas" }
     ],
     // baris kode dekoratif di kartu sebelah hero — bisa diganti bebas
     codeLines: [
       "const developer = {",
-      "  name: 'Andra Wijaya',",
-      "  role: 'Full-Stack Developer',",
+      "  name: 'M.Nur Erik Setiawan',",
+      "  role: 'Portfoilo',",
       "  stack: ['React', 'Node.js', 'PostgreSQL'],",
-      "  passion: 'clean code & good UX',",
+      "  passion: 'Animation & Motion Graphic',",
       "};"
     ]
   },
 
   // ---- Tentang Saya ----
   about: {
-    text: "Saya developer yang senang mengubah masalah rumit jadi produk yang simpel dipakai. Lima tahun terakhir saya fokus di ekosistem JavaScript — dari API backend sampai antarmuka yang halus di sisi depan. Saya percaya kode yang baik itu kode yang mudah dibaca orang lain, bukan hanya yang berjalan.",
+    text: "Aku sendiri memiliki pegalaman dalam hal Editing,Animasi,Fotografi,Videografi,Dan banyal lagi macam macamnya.Aku juga sekarang dalam tahap ingin mecoba semua hal baru seperti coding ai dan Iot,untuk sekarang aku fokuskan di coding terlebih dahulu",
     facts: [
-      { label: "Fokus saat ini",     value: "Aplikasi web berbasis AI" },
-      { label: "Cara kerja favorit", value: "Remote & async" },
-      { label: "Sedang belajar",     value: "Rust & sistem terdistribusi" }
+      { label: "Fokus saat ini",     value: "Mempelajari Coding & Animasi" },
+      { label: "Cara kerja favorit", value: "Santai Tapi Selesai Tepat Waktu" },
+      { label: "Sedang belajar",     value: "Dalam hal coding dan animasi" }
     ]
   },
 
@@ -97,18 +97,18 @@ const PORTFOLIO_DATA = {
   // ---- Proyek ----
   projects: [
     {
-      title: "Sistem Manajemen Inventaris",
-      desc: "Dashboard internal untuk melacak stok multi-gudang secara real-time.",
+      title: "Scene 2 Rewind Minecraft X Gacha",
+      desc: "Animasi yang dibuat dengan device seadanya.",
       tags: ["React", "Node.js", "PostgreSQL"],
       thumbLabel: "inventory.app",
-      url: "#"
+      url: "https://youtu.be/DlXg4sLkhqc?si=cDXL6MlGL0b0lkdg"
     },
     {
-      title: "Platform Booking Klinik",
-      desc: "Aplikasi reservasi dokter dengan notifikasi otomatis via WhatsApp.",
+      title: "Editing Video Exe",
+      desc: "Mencoba dalam mengedit hal baru yaitu video exe dan merupakan video exe pertama saya.",
       tags: ["Next.js", "Prisma", "Redis"],
       thumbLabel: "clinic.book",
-      url: "#"
+      url: "https://youtu.be/WC8NwJ7q0xk?si=Cdq0T113vgD9-Rx7"
     },
     {
       title: "Toko Online Headless",
@@ -122,7 +122,7 @@ const PORTFOLIO_DATA = {
   // ---- Kontak & Footer ----
   contact: {
     socials: [
-      { label: "GitHub", url: "#" },
+      { label: "GitHub", url: "" },
       { label: "LinkedIn", url: "#" },
       { label: "Twitter / X", url: "#" }
     ]
