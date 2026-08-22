@@ -197,7 +197,7 @@
   .about{padding:80px 0;background:var(--bg-soft);}
   .about-inner{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start;}
   .avatar-block{
-    aspect-ratio:1/1;border-radius:20px;
+    aspect-ratio:1/1;border-radius:60px;
     background:var(--grad-main);
     display:flex;align-items:center;justify-content:center;
     color:#fff;font-family:var(--font-display);font-size:64px;font-weight:700;
