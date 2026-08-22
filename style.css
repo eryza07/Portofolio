@@ -123,7 +123,7 @@
     pointer-events:none;
     z-index:-1;
   }
-  .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:600;font-size:16px;min-width:0;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:600;font-size:23px;min-width:0;}
   .logo span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46vw;}
   .logo-mark{
     width:48px;height:48px;border-radius:50%;
