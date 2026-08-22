@@ -15,7 +15,7 @@ const PORTFOLIO_DATA = {
     //   contoh: "foto-erik.jpg"
     // - Atau isi dengan link foto dari internet,
     //   contoh: "https://contoh.com/foto-erik.jpg"
-    avatarImage: "foto profile saya.jpg",
+    avatarImage: "foto-profil.jpg",
 
     firstName: "M",
     lastName: "Nur Erik Setiawan",
