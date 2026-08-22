@@ -35,7 +35,7 @@ const PORTFOLIO_DATA = {
       "const developer = {",
       "  name: 'M.Nur Erik Setiawan',",
       "  role: 'Portfoilo',",
-      "  stack: ['React', 'Node.js', 'PostgreSQL'],",
+      "  stack: ['Animaton', 'Editing', 'Coding', 'IoT'],",
       "  passion: 'Animation & Motion Graphic',",
       "};"
     ]
