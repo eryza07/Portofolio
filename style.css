@@ -42,7 +42,9 @@
     font-family:var(--font-body);
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
+  html{overflow-x:hidden;}
   img{max-width:100%;display:block;}
   a{color:inherit;text-decoration:none;}
   ul{list-style:none;}
@@ -97,15 +99,31 @@
      ========================================================= */
   header.nav{
     position:sticky;top:0;z-index:50;
-    background:rgba(255,255,255,.78);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--line);
+    background:transparent;
+    padding:14px 20px 0;
   }
   .nav-inner{
-    max-width:1160px;margin:0 auto;padding:16px 28px;
+    position:relative;isolation:isolate;
+    max-width:1160px;margin:0 auto;padding:12px 26px;
     display:flex;align-items:center;justify-content:space-between;
+    background:rgba(255,255,255,.55);
+    backdrop-filter:blur(20px) saturate(180%);
+    -webkit-backdrop-filter:blur(20px) saturate(180%);
+    border:1px solid rgba(255,255,255,.75);
+    border-radius:100px;
+    box-shadow:0 10px 34px -10px rgba(17,18,26,.18), inset 0 1px 0 rgba(255,255,255,.75);
   }
-  .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:600;font-size:16px;}
+  /* highlight tipis di atas pill navbar, kesan pantulan cahaya di permukaan kaca */
+  .nav-inner::before{
+    content:'';
+    position:absolute;inset:0;
+    border-radius:inherit;
+    background:linear-gradient(120deg, rgba(255,255,255,.6) 0%, rgba(255,255,255,0) 35%, rgba(255,255,255,.25) 75%);
+    pointer-events:none;
+    z-index:-1;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:600;font-size:16px;min-width:0;}
+  .logo span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46vw;}
   .logo-mark{
     width:34px;height:34px;border-radius:10px;
     background:var(--grad-main);
@@ -124,10 +142,15 @@
 
   @media(max-width:860px){
     .nav-links{
-      position:fixed;top:66px;left:0;right:0;
-      background:#fff;border-bottom:1px solid var(--line);
+      position:absolute;top:calc(100% + 10px);left:0;right:0;
+      background:rgba(255,255,255,.7);
+      backdrop-filter:blur(20px) saturate(180%);
+      -webkit-backdrop-filter:blur(20px) saturate(180%);
+      border:1px solid rgba(255,255,255,.75);
+      border-radius:var(--radius-lg);
+      box-shadow:0 16px 40px -10px rgba(17,18,26,.22), inset 0 1px 0 rgba(255,255,255,.75);
       flex-direction:column;align-items:flex-start;gap:0;
-      padding:8px 28px 18px;
+      padding:6px 22px 14px;
       transform:translateY(-8px);opacity:0;pointer-events:none;
       transition:opacity .25s ease, transform .25s ease;
     }
@@ -180,7 +203,7 @@
   .code-topbar span:nth-child(2){background:#febc2e;}
   .code-topbar span:nth-child(3){background:#28c840;}
   .code-title{margin-left:8px;font-family:var(--font-mono);font-size:12px;color:#8b8fa3;}
-  .code-body{padding:22px 22px 26px;font-family:var(--font-mono);font-size:13.5px;line-height:1.9;white-space:pre;}
+  .code-body{padding:22px 22px 26px;font-family:var(--font-mono);font-size:13.5px;line-height:1.9;white-space:pre;overflow-x:auto;-webkit-overflow-scrolling:touch;}
   .code-body .k{color:#8ab4ff;}
   .code-body .s{color:#8ee6a8;}
   .code-body .c{color:#6b6f85;}
@@ -197,7 +220,7 @@
   .about{padding:80px 0;background:var(--bg-soft);}
   .about-inner{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start;}
   .avatar-block{
-    aspect-ratio:1/1;border-radius:70px;
+    aspect-ratio:1/1;border-radius:50px;
     background:var(--grad-main);
     display:flex;align-items:center;justify-content:center;
     color:#fff;font-family:var(--font-display);font-size:64px;font-weight:700;
@@ -464,4 +487,29 @@
   @media(max-width:640px){
     .music-player{left:14px;bottom:14px;max-width:210px;}
     .music-title,.music-sub{max-width:100px;}
+  }
+
+  /* =========================================================
+     9. PENYESUAIAN UNTUK LAYAR SANGAT SEMPIT (HP kecil)
+     ========================================================= */
+  @media(max-width:640px){
+    .wrap{padding:0 18px;}
+    header.nav{padding:10px 14px 0;}
+    .nav-inner{padding:10px 16px;}
+    .hero{padding:36px 0 56px;}
+    .about{padding:56px 0;}
+    .dashboard{padding:56px 0;}
+    .projects{padding:56px 0;}
+    .contact{padding:56px 0;}
+    .section-head{margin-bottom:30px;}
+    .hero-stats{gap:24px;}
+    .code-body{font-size:12px;padding:18px 18px 22px;}
+    .contact-card{padding:32px 20px;}
+  }
+
+  @media(max-width:400px){
+    .logo span:last-child{max-width:38vw;}
+    .hero-stats .stat b{font-size:22px;}
+    .dash-summary .sitem{padding:16px 14px;}
+    .dash-summary .sitem b{font-size:20px;}
   }
