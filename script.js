@@ -150,7 +150,7 @@ const PORTFOLIO_DATA = {
   music: {
     playlist: [
       // Contoh — hapus tanda // di baris bawah & sesuaikan setelah file musik ditaruh:
-      // { title: "Judul Lagu 1", artist: "Nama Artis", src: "musik/lagu1.mp3" },
+      { title: "Foto Kita Blur", artist: "Sal Priadi", src: "foto-kita-blur.mp3" },
       // { title: "Judul Lagu 2", artist: "Nama Artis", src: "musik/lagu2.mp3" },
     ]
   },
