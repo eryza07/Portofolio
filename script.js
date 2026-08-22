@@ -7,7 +7,16 @@ const PORTFOLIO_DATA = {
 
   // ---- Identitas & Hero ----
   profile: {
-    initials: "ER",                 // inisial untuk logo & avatar
+    initials: "ER",                 // inisial untuk logo & avatar (dipakai kalau foto kosong)
+
+    // FOTO PROFIL:
+    // - Kosongkan ("") kalau mau tetap pakai inisial "ER".
+    // - Isi dengan nama file kalau fotonya ditaruh 1 folder dengan index.html,
+    //   contoh: "foto-erik.jpg"
+    // - Atau isi dengan link foto dari internet,
+    //   contoh: "https://contoh.com/foto-erik.jpg"
+    avatarImage: "",
+
     firstName: "M",
     lastName: "Nur Erik Setiawan",
     role: "Portfolio",
@@ -92,12 +101,17 @@ const PORTFOLIO_DATA = {
   },
 
   // ---- Proyek ----
+  // Tambahkan "image" di tiap proyek untuk memasang foto/thumbnail:
+  // - Kosongkan ("") kalau mau tetap pakai teks label (mis. "inventory.app").
+  // - Isi nama file (foto ditaruh 1 folder dengan index.html), contoh: "proyek1.jpg"
+  // - Atau isi link foto dari internet.
   projects: [
     {
       title: "Scene 2 Rewind Minecraft X Gacha",
       desc: "Animasi yang dibuat dengan device seadanya.",
       tags: ["React", "Node.js", "PostgreSQL"],
       thumbLabel: "inventory.app",
+      image: "",
       url: "https://youtu.be/DlXg4sLkhqc?si=cDXL6MlGL0b0lkdg"
     },
     {
@@ -105,6 +119,7 @@ const PORTFOLIO_DATA = {
       desc: "Mencoba dalam mengedit hal baru yaitu video exe dan merupakan video exe pertama saya.",
       tags: ["Next.js", "Prisma", "Redis"],
       thumbLabel: "clinic.book",
+      image: "",
       url: "https://youtu.be/WC8NwJ7q0xk?si=Cdq0T113vgD9-Rx7"
     },
     {
@@ -112,6 +127,7 @@ const PORTFOLIO_DATA = {
       desc: "E-commerce cepat dengan arsitektur headless dan pembayaran terintegrasi.",
       tags: ["Vue.js", "Express", "Stripe"],
       thumbLabel: "shop.store",
+      image: "",
       url: "#"
     }
   ],
@@ -134,13 +150,28 @@ const PORTFOLIO_DATA = {
 const P = PORTFOLIO_DATA;
 
 // ---------- Navbar & Hero ----------
-document.getElementById('navInitials').textContent = P.profile.initials;
 document.getElementById('navName').textContent = `${P.profile.firstName} ${P.profile.lastName}`;
 document.getElementById('heroEyebrow').textContent = P.profile.eyebrow;
 document.getElementById('heroName').innerHTML = `${P.profile.firstName} <span class="grad-text">${P.profile.lastName}</span>`;
 document.getElementById('heroTagline').textContent = P.profile.tagline;
 document.getElementById('cvBtn').href = P.profile.cvUrl;
-document.getElementById('avatarBlock').textContent = P.profile.initials;
+
+// logo kecil di navbar: pakai foto kalau ada, kalau tidak pakai inisial
+const navInitialsEl = document.getElementById('navInitials');
+if (P.profile.avatarImage) {
+  navInitialsEl.innerHTML = `<img src="${P.profile.avatarImage}" alt="Foto ${P.profile.firstName}">`;
+} else {
+  navInitialsEl.textContent = P.profile.initials;
+}
+
+// foto/avatar besar di bagian "Tentang Saya"
+const avatarBlockEl = document.getElementById('avatarBlock');
+if (P.profile.avatarImage) {
+  avatarBlockEl.innerHTML = `<img src="${P.profile.avatarImage}" alt="Foto ${P.profile.firstName} ${P.profile.lastName}">`;
+  avatarBlockEl.classList.add('has-img');
+} else {
+  avatarBlockEl.textContent = P.profile.initials;
+}
 
 document.getElementById('heroStats').innerHTML = P.profile.stats.map(s => `
   <div class="stat"><b>${s.value}</b><span>${s.label}</span></div>
@@ -211,9 +242,16 @@ document.getElementById('dashFilters').addEventListener('click', (e) => {
 });
 
 // ---------- Projects ----------
-document.getElementById('projGrid').innerHTML = P.projects.map(pr => `
+document.getElementById('projGrid').innerHTML = P.projects.map(pr => {
+  // kalau "image" diisi, tampilkan foto; kalau tidak, tampilkan teks label seperti biasa
+  const thumbInner = pr.image
+    ? `<img src="${pr.image}" alt="${pr.title}">`
+    : pr.thumbLabel;
+  const thumbClass = pr.image ? 'proj-thumb has-img' : 'proj-thumb';
+
+  return `
   <a class="proj-card reveal" href="${pr.url}" target="_blank" rel="noopener">
-    <div class="proj-thumb">${pr.thumbLabel}</div>
+    <div class="${thumbClass}">${thumbInner}</div>
     <div class="proj-body">
       <h3>${pr.title}</h3>
       <p>${pr.desc}</p>
@@ -221,7 +259,8 @@ document.getElementById('projGrid').innerHTML = P.projects.map(pr => `
       <span class="proj-link">Lihat detail →</span>
     </div>
   </a>
-`).join('');
+`;
+}).join('');
 
 // ---------- Contact / Footer ----------
 document.getElementById('availText').textContent = P.profile.availability;
