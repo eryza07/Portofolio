@@ -48,7 +48,7 @@ const PORTFOLIO_DATA = {
   skillDashboard: {
     categories: [
       {
-        id: "animasi",
+        id: "frontend",
         name: "Animasi",
         icon: "◧",
         skills: [
@@ -57,7 +57,7 @@ const PORTFOLIO_DATA = {
         ]
       },
       {
-        id: "editing",
+        id: "backend",
         name: "Editing",
         icon: "◨",
         skills: [
@@ -67,7 +67,7 @@ const PORTFOLIO_DATA = {
         ]
       },
       {
-        id: "coding,
+        id: "devops",
         name: "Coding",
         icon: "◩",
         skills: [
@@ -78,7 +78,7 @@ const PORTFOLIO_DATA = {
         ]
       },
       {
-        id: "poster",
+        id: "tools",
         name: "Poster",
         icon: "◪",
         skills: [
